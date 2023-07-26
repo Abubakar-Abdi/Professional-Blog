@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Downloader</title>
+</head>
+<body>
+    <h1>YouTube Downloader</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="url" placeholder="Enter YouTube video URL" required>
+        <button type="submit">Get Video Details</button>
+    </form>
+    
+    {% if title %}
+        <h2>{{ title }}</h2>
+        <h3>Choose Quality:</h3>
+        <ul>
+            {% for stream in stream_list %}
+                <li>
+                    <a href="{{ stream.url }}">{{ stream.resolution }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

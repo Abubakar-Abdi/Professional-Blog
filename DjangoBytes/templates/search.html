@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<h2 style="color: aquamarine;"> Search</h2>
+<FORm  method="'GET", action="{% url 'search' %}">
+       {{form2}}
+    <button type="submit">Search</button>
+
+      {% if results %}
+      <h3> serach results</h3>
+        <ul>
+              {% for Post in results%}
+                <li>{{Post.title}}  </li> 
+                {% endfor%}   </ul>
+        {%else%}
+        <h2> No seach results found </h2>
+
+
+      {% endif%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</FORm>
+
+
+
+
+
+
+
+
+
+{% endblock%}

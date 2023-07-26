@@ -1,0 +1,24 @@
+/* Styles for dark mode */
+
+/* Styles for dark mode */
+.dark-mode {
+  background-color: black;
+  color:green;
+}
+
+.dark-mode h1 {
+  color: green;
+}
+
+.dark-mode p,
+.dark-mode .card-text,
+.dark-mode .text-muted,
+.dark-mode .font-weight-normal,
+.dark-mode .btn-primary {
+  color: white;
+  -webkit-text-fill-color: aliceblue;
+}
+
+  .light-mode h1 {
+    color: #111;
+  }
