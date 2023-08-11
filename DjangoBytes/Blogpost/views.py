@@ -105,15 +105,3 @@ def social_integration(request):
 
 
 
-def downloader(request):
-    if request.method == 'POST':
-        url = request.POST.get('url')
-        video = YouTube(url)
-        title = video.title
-        stream_list = video.streams.filter(progressive=True)
-        context = {
-            'title': title,
-            'stream_list': stream_list
-        }
-        return render(request, 'downloader.html', context)
-    return render(request, 'downloader.html',{})
